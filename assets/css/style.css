@@ -337,7 +337,10 @@ h5 {
 .tct {
   padding: 40px 40px 40px 0px;
 }
-
+.rec .owl-dots {
+    position: absolute;
+    bottom: -50%;
+  }
 @media (min-width: 1200px) and (max-width: 1400px) {}
 
 @media (min-width: 1400px) and (max-width: 1600px) {}
