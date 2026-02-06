@@ -255,6 +255,12 @@ backdrop-filter: blur(6px);
   position: relative;
  bottom: -59px;
 }
+.art{
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  width: 150px;
+}
 .tct{
   padding: 40px 40px 40px 0px;
 }
