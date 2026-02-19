@@ -61,7 +61,9 @@ a{
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
-
+.contact-item{
+   font-family: "Montserrat", sans-serif;
+}
 p,
 ul li {
   font-family: "Montserrat", sans-serif;
