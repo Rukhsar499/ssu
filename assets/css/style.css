@@ -15,7 +15,12 @@ body {
   background-color: #fff;
   /* background-image: linear-gradient(180deg, #FFF0E5 0%, #FFF0E5 40%);    */
 }
-
+a{
+  text-decoration: none;
+}
+.sticky-footer{
+  display: none;
+}
 .header {
   position: fixed;
   background-color: #fff;
@@ -89,14 +94,15 @@ h1 {
   font-family: "Montserrat", sans-serif;
 }
 
-.form-control,
-.form-select {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #000;
-  color: #000;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+.form-control, .form-select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    padding: 0px 0px 5px 0px;
+    border-radius: 0px;
 }
 
 ::placeholder {
@@ -117,13 +123,17 @@ h1 {
   padding-top: 10px;
   color: #fff;
 }
-
+#enq{
+  margin-bottom: 20px;
+ border-bottom: 2px solid #000;
+ width: fit-content;
+}
 .mb {
   margin-bottom: 50px;
 }
 
 label {
-  font-size: 12px !important;
+  font-size: 14px !important;
   color: #000;
   font-family: "Montserrat", sans-serif;
 }
@@ -161,7 +171,12 @@ h6 {
   width: 60%;
   margin-top: 30px;
 }
-
+.how-bx2 {
+    background: linear-gradient(to bottom, #ffffff 0%, #e9e9e96e 100%);
+    backdrop-filter: blur(6px);
+    border-radius: 0px 0px 12px 12px;
+    padding: 20px;
+}
 .bg-box {
   background: #e6e6e686;
   border-radius: 12px;
@@ -184,9 +199,11 @@ h6 {
     0 10px 10px rgba(0, 0, 0, 0.12),
     0 4px 8px rgba(0, 0, 0, 0.08);
 }
-.accordion-body{
+
+.accordion-body {
   font-family: "Montserrat", sans-serif;
 }
+
 .bg-box p {
   font-size: 14px;
 }
@@ -229,7 +246,10 @@ h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
-
+.btn-Tuition:hover {
+  background-color: #602118;
+  color: #fff;
+}
 .cat {
   position: absolute;
   bottom: -9%;
@@ -237,7 +257,21 @@ h5 {
   width: 350px;
 
 }
+.icon-box {
+  background-color: #602118;
+  box-shadow: rgba(0, 0, 0, 0.176) 0px 0px 12px;
+  margin-bottom: 5px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+}
 
+.sticky-icon {
+  position: fixed;
+  top: 55%;
+  right: 1%;
+  z-index: 999;
+}
 .course {
   position: relative;
 }
@@ -253,7 +287,10 @@ h5 {
   font-weight: 600;
   margin-right: 20px;
 }
-
+.btn-duration:hover {
+  background-color: #602118;
+  color: #fff;
+}
 .owl-theme .owl-dots .owl-dot span {
   width: 10px;
   height: 2px;
@@ -306,56 +343,191 @@ h5 {
 .how-bx {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 245, 0.95) 100%);
   backdrop-filter: blur(6px);
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 20px;
 
 }
-
+.owl-nav .owl-next span{
+  background: linear-gradient(90deg, #602118, #602118);
+  display: block;
+  width: 25px !important;
+  height: 25px;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 50px;
+  position:absolute;
+  right: 0px;
+  top: 10%;
+}
+.owl-nav .owl-prev span{
+  background: linear-gradient(90deg, #602118, #602118);
+  display: block;
+  width: 25px !important;
+  height: 25px;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 50px;
+  position:absolute;
+  left: -4%;
+  top: 10%;
+}
 /* semester-tab section */
 
 .semester-box {
   border: solid 1px #602118 !important;
   background: #f8f0ee !important;
   border-radius: 10px !important;
-  padding:8px 25px 8px 10px!important;
+  padding: 0px 20px 0px 0px !important;
   color: black;
 }
+
 .semester-box.active {
-  background:#602118!important;
+  background: #602118 !important;
   color: #fff !important;
 }
+
 .icon-circle {
-  padding: 10px 10px;
+  padding: 8px;
   background: #602118;
-  border-radius: 12px;
+  border-radius: 9px;
 }
+
 .semester-box.active .icon-circle {
   background: #fff;
 }
+
 .icon-circle img {
   width: 25px !important;
   filter: brightness(0) invert(1);
 }
+
 .nav-link.active img {
-    filter: none;
+  filter: none;
 }
+
 .box-number {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
 }
-.custom-arrow {
-    filter: invert(1) !important;
-    z-index: 99;
+
+.box-number:hover {
+  color: #602118;
 }
-.course-card{
-    padding: 20px 0px 20px 35px;
-    border: 1px solid rgba(209, 207, 207, 0.521);
-    border-radius: 20px;
-    height: 250px;
+
+
+
+/* .course-card{
+    padding: 30px 20px;
+    border: 1px solid #d1cfcfdb;
+    border-radius: 10px;
+    height: 100%;
+    background-color: #f8f0ee;
+    
+} */
+.course-card {
+  position: relative;
+  padding: 30px 25px;
+  border-radius: 18px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 245, 0.95) 100%);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  overflow: hidden;
+  transition: all .35s ease;
+
+  /* soft shadow */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
 }
-.course-row{
-  row-gap: 30px;
+
+/* top gradient accent line */
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #602118, #602118);
+  opacity: .85;
+}
+
+/* hover effect */
+.course-card:hover {
+  transform: translateY(-12px) scale(1.01);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.15);
+}
+
+/* title */
+.course-card h4 {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* description */
+.course-card p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* icon circle */
+.course-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #602118, #602118);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 26px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0);
+  transition: all .35s ease;
+}
+
+.course-card:hover .course-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/* button */
+.course-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #602118, #602118);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all .3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 12px 22px rgba(0, 0, 0, 0.12),
+    0 22px 40px rgba(0, 0, 0, 0.18);
+}
+
+.course-card ul {
+  padding-left: 20px;
+  margin-bottom: 0rem;
+}
+
+.course-card ul li {
+  font-size: 14px;
+}
+
+.course-card h5 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav-item {
+  margin-bottom: 20px;
 }
 
 .tect-t {
@@ -385,14 +557,25 @@ h5 {
 .tct {
   padding: 40px 40px 40px 0px;
 }
+
 .rec .owl-dots {
-    position: absolute;
-    bottom: -50%;
-  }
-  .tab-slider .owl-dots {
-    position: absolute;
-    bottom: -50%;
-  }
+  
+  bottom: -50%;
+}
+.apply {
+    position: fixed;
+    bottom: 45%;
+    left: -3%;
+    transform: rotate(270deg);
+}
+.shine-button{
+  background-color: #602118;
+    box-shadow: rgba(0, 0, 0, 0.176) 0px 0px 12px;
+        color: #fff;
+        padding: 20px 10px;
+        font-weight: 400;
+}
+
 @media (min-width: 1200px) and (max-width: 1400px) {}
 
 @media (min-width: 1400px) and (max-width: 1600px) {}
@@ -402,73 +585,142 @@ h5 {
 @media screen and (max-width: 767px) {
   .text-container {
     width: 93%;
-}
-.adms {
+  }
+
+  .adms {
     background-position: left;
     padding: 125px 0px;
   }
-.adms::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(19, 19, 19, 0.719); /* adjust opacity here */
-  z-index: 1;
+
+  .adms::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 19, 19, 0.719);
+    /* adjust opacity here */
+    z-index: 1;
+  }
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 19, 19, 0.719);
+    z-index: 1;
+  }
+  .banner .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+.banner {
+  padding: 100px 0 0px 0px;
 }
-.adms .container{
-  position: relative;
-  z-index: 2;
-}
-.box-number {
+  .adms .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .box-number {
     margin-top: 8px;
     font-size: 13px;
     font-weight: 500;
-}
-.icon-circle {
+  }
+
+  .icon-circle {
     padding: 4px 4px;
-}
-  .owl-dots {
+  }
+
+  /* .owl-dots {
     position: absolute;
     bottom: -3%;
-  }
+  } */
+
   .how-img {
-   display: none;
-}
-.tct {
+    display: none;
+  }
+
+  .tct {
     padding: 0px 0px 0px 0px;
-}
-.tect {
+  }
+
+  .tect {
     text-align: center;
-}
+  }
+
   .c-bx {
     width: 100%;
 
-}
+  }
 
-.plan-img{
+  .plan-img {
     width: 98%;
-     margin-bottom: 15px;
-}
-.cat {
-  bottom: 8%;
-  right: 0%;
-  width: 135px;
-    }
-.d-t
- {
+    margin-bottom: 15px;
+  }
+
+  .cat {
+    bottom: 9.6%;
+    right: 0%;
+    width: 135px;
+  }
+
+  .d-t {
     width: 98%;
-}
-.btn-duration{
- margin-bottom: 10px;
-}
-.bg-box {
+  }
+
+  .btn-duration {
+    margin-bottom: 10px;
+  }
+
+  .bg-box {
     padding: 20px;
     height: 380px;
+  }
+.semester-box {
+  padding: 0px 16px 0px 0px !important;
+    
 }
-.bg-boxs {
+  .bg-boxs {
     padding: 18px 17px;
     width: 363px;
-}
+  }
+  .sticky-icon {
+        display: none;
+    }
+    .sticky-footer {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        box-shadow: 0 -2px 6px rgb(0 0 0 / .2);
+        z-index: 1000;
+        justify-content: space-around;
+        padding: 0;
+    }
+    .footer-btn.whatsapp, .sticky-contact:hover, .whatsapp, .footer-btn.phone
+       {
+        background-color: #602118;
+    }
+    .footer-btn {
+        flex: 1;
+        font-size: 14px;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: background-color .3s, transform .2s;
+        font-family: Arial, sans-serif;
+    }
+    .footer-btn.contact-us {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 245, 0.95) 100%);
+        color: #000;
+    }
 }

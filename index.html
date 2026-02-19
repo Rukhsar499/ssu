@@ -1,13 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sri Sri University</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,12 +12,74 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+
+    <style>
+        .book-modal-content {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .book-left {
+            padding: 40px;
+            background: #ffffff;
+        }
+
+        .book-right {
+            padding: 50px 40px;
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-left: 1px solid #eaeaea;
+        }
+
+        .book-right .motivational-line {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+            margin: 25px 0;
+            line-height: 1.6;
+        }
+
+        .book-right .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1c1c1c;
+            margin-bottom: 15px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .book-right .contact-item:hover {
+            opacity: 0.7;
+        }
+
+        .modal-btn-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            background: #fff;
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -28,7 +87,8 @@
     <section id="closeable-section">
         <div class="section-content">
             <div class="text-container">
-                <p class="text-white text-center">For Assured Placement Assistance</b> <span class="enrol">Enrol
+                <p class="text-white text-center">For Assured Placement Assistance</b> <span class="enrol"
+                        style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">Enrol
                         Now!</span></p>
                 <div class="close-button" onclick="closeSection()">
                     <img src="assets/img/close-circle.png" alt="" width="25px" height="25px">
@@ -49,7 +109,7 @@
         <div>
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-12">
+                    <div class="col-lg-6 col-md-12 col-12" data-aos="fade-right">
                         <h1>B.Tech in</h1>
                         <h2 class="text-white" style="text-align: left;">Computer Science & Engineering <br>
                             with Specialization in Animation & VFX</h2>
@@ -64,36 +124,37 @@
                         </ul>
                     </div>
                     <div class="col-lg-1 col-md-1 col-1"></div>
-                    <div class="col-lg-5 col-md-5 col-12">
+                    <div class="col-lg-5 col-md-5 col-12" data-aos="fade-left" data-aos-delay="200">
                         <div class="form">
-                            <form id="about-from">
+                            <form id="form1">
                                 <h4 id="enq">Admission Enquiry Form!</h4>
                                 <div class="mb-4">
-                                    <input type="text" class="form-control" name="student_name" id="student_name"
-                                        placeholder=" Name">
+                                    <input type="text" class="form-control" name="sname" id="sname" placeholder=" Name">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="text" class="form-control" name="phone" id="phone"
+                                    <input type="text" class="form-control" name="sphone" id="sphone"
                                         placeholder="Phone Number">
                                 </div>
 
                                 <div class="mb-4">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email">
+                                    <input type="email" name="semail" id="semail" class="form-control" name="email"
+                                        id="email" placeholder="Email">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="text" class="form-control" name="city" id="city" placeholder="City">
+                                    <input type="text" id="city" name="city" class="form-control" name="city" id="city"
+                                        placeholder="City">
                                 </div>
                                 <div class="mb-4">
                                     <select class="form-select form-select-sm" aria-label="Small select example"
-                                        name="grade" id="grade" required>
+                                        id="qualification" name="qualification" required>
                                         <option value="" selected disabled>Highest qualification</option>
                                         <option value="12th Passout in 2025">12th Passout in 2025</option>
                                         <option value="Pursuing Graduation">Pursuing Graduation</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label" required>Message (if
+                                    <label for="exampleFormControlTextarea1" class="form-label" name="message"
+                                        id="message" required>Message (if
                                         any)</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
                                 </div>
@@ -104,17 +165,19 @@
 
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
 
     <section class="mb rec">
         <div class="pt-3 pb-3">
             <div class="container">
                 <div>
-                    <div class="title-text vulte-rdx3s">
+                    <div class="title-text vulte-rdx3s" data-aos="fade-up">
                         <h2>
                             Our Recognitions</h2>
                     </div>
-                    <div class="owl-carousel owl-theme" data-owl-carousel='{
+                    <div class="owl-carousel owl-theme" data-aos="fade-up" data-aos-delay="150" data-owl-carousel='{
                                             "margin": 10,
                                             "dots":true,
                                             "loop":true,
@@ -122,28 +185,28 @@
                                             "responsive":{"0":{"items":3,"dots":false}, "600":{"items":2,"dots":true},"1000":{"items":7}}
                                         }'>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image1.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image1.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image2.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image2.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image3.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image3.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image4.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image4.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image5.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image5.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image6.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image6.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image7.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image7.webp" alt="amid">
                         </div>
                         <div class="item">
-                            <img class="partner-img" src="./assets/img/image8.png" alt="amid">
+                            <img class="partner-img" src="./assets/img/image8.webp" alt="amid">
                         </div>
 
                     </div>
@@ -154,53 +217,52 @@
 
     <section class="how">
         <div class="container">
-            <h2>How is this B.Tech Program Different?</h2>
+            <h2 data-aos="fade-up">How is this B.Tech Program Different?</h2>
             <div class="row">
 
                 <div class="col-lg-7 col-md-7 col-12">
                     <div class="tct">
-                    <div class="row">
-                       <div class="col-lg-6 col-md-6 col-12">
-                            <div class="tect">
-                                <img src="assets/img/Animation-vfx.webp" alt="">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                                <div class="tect">
+                                    <img src="assets/img/Animation-vfx.webp" alt="">
 
-                                <div class="how-bx">
-                                    <p class="mb-0">Animation and <br>VFX Industry</p>
+                                    <div class="how-bx">
+                                        <p class="mb-0">Animation and <br>VFX Industry</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="tect">
-                                <img src="assets/img/computerscienc&i.webp" alt="">
+                            <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                                <div class="tect">
+                                    <img src="assets/img/computerscienc&i.webp" alt="">
 
-                                <div class="how-bx">
-                                    <p class="mb-0">Computer Science & <br> AI-Driven Animation Roles</p>
+                                    <div class="how-bx2">
+                                        <p class="mb-0">Computer Science & <br> AI-Driven Animation Roles</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="tect">
-                                <img src="assets/img/Filmliaction.webp" alt="">
+                            <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                                <div class="tect">
+                                    <img src="assets/img/Filmliaction.webp" alt="">
 
-                                <div class="how-bx">
-                                    <p class="mb-0">Film & Live-Action <br> Industry Roles</p>
+                                    <div class="how-bx">
+                                        <p class="mb-0">Film & Live-Action <br> Industry Roles</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                           <div class="tect">
-                                <img src="assets/img/creative.webp" alt="">
+                            <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                                <div class="tect">
+                                    <img src="assets/img/creative.webp" alt="">
 
-                                <div class="how-bx">
-                                    <p class="mb-0">Other Creative & <br> Technical Roles</p>
+                                    <div class="how-bx2">
+                                        <p class="mb-0">Other Creative & <br> Technical Roles</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   </div>
-               </div>
-                <!-- <div class="col-lg-1 col-md-1 col-1"></div> -->
-                <div class="col-lg-5 col-md-5 col-12">
+                </div>
+                <div class="col-lg-5 col-md-5 col-12" data-aos="zoom-in" data-aos-delay="200">
                     <div class="how-img">
                         <img src="assets/img/boy.webp" alt="" class="img-fluid">
                         <div class="art">
@@ -214,8 +276,8 @@
 
     <section class="placemnet">
         <div class="container">
-            <h2>Our Placement Partners </h2>
-            <div class="row">
+            <h2 data-aos="fade-up">Our Placement Partners </h2>
+            <div class="row" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-lg-2 col-md-2 col-4">
                     <div class="plan-img">
                         <img src="assets/img/p1.png" alt="" class="img-fluid">
@@ -252,384 +314,628 @@
 
     <section class="adms mb">
         <div class="container">
-            <div class="adm-bx">
+            <div class="adm-bx" data-aos="zoom-in">
                 <h2 style="text-align: left;" class="text-white">Admissions Open for 2024-25</h2>
                 <p class="mb-0 text-white">Apply Now for a Future-Ready B.Tech in Computer Science & Engineering with
                     Specialization in Animation & VFX at Sri Sri University. Experience a Unique Blend of Technology and
                     Creativity, Industry Exposure, and Hands-on Learning. Enroll Today for a Transformative Educational
                     Journey!</p>
-                <button class="enrol mt-4">Enrol Now</button>
+                <button class="enrol mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Enrol Now</button>
             </div>
         </div>
     </section>
 
-   <section class="mb tab-slider">
+    <section class="mb tab-slider">
         <div class="pt-3 pb-3">
             <div class="container">
                 <div>
-                    <div class="title-text vulte-rdx3s">
+                    <div class="title-text vulte-rdx3s" data-aos="fade-up">
                         <h2>
-                            Our Recognitions</h2>
+                            Course Curriculum</h2>
                     </div>
-                     <button class="carousel-control-prev" type="button"
-                      data-bs-target="#semesterCarousel"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon custom-arrow"></span>
-                  </button>
-                    <div class="owl-carousel owl-theme nav nav-pills mb-3" id="pills-tab" role="tablist" data-owl-carousel='{
+                    <button class="carousel-control-prev" type="button" data-bs-target="#semesterCarousel"
+                        data-bs-slide="prev">
+
+                    </button>
+                    <div class="owl-carousel owl-theme nav nav-pills mb-3" id="pills-tab" role="tablist"
+                        data-owl-carousel='{
                                             "margin": 10,
                                             "dots":false,
+                                            "nav": true,
                                             "loop":true,
-                                            "autoplay":true,
+                                            "autoplay":false,
                                             "responsive":{"0":{"items":2,"dots":false}, "600":{"items":2,"dots":false},"1000":{"items":5}}
-                                        }'>
+                                        }' data-aos="fade-up" data-aos-delay="100">
                         <div class="item">
-                              <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box active" id="pills-sem1-tab" data-bs-toggle="pill" data-bs-target="#pills-sem1" type="button"   role="tab" aria-controls="pills-sem1" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/scholarship.png" alt="">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box active" id="pills-sem1-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem1" type="button" role="tab" aria-controls="pills-sem1"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - I</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - I</p>
-                                  </div>
                                 </button>
-                              </div>
+                            </div>
                         </div>
                         <div class="item">
-                              <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box" id="pills-sem2-tab" data-bs-toggle="pill" data-bs-target="#pills-sem2" type="button"role="tab" aria-controls="pills-sem2" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/money.png" alt="">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem2-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem2" type="button" role="tab" aria-controls="pills-sem2"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - II</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - II</p>
-                                  </div>
                                 </button>
-                              </div>
+                            </div>
                         </div>
-                         <div class="item">
-                              <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box" id="pills-sem3-tab" data-bs-toggle="pill" data-bs-target="#pills-sem3" type="button"role="tab" aria-controls="pills-sem3" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/scholarship.png" alt="">
+                        <div class="item">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem3-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem3" type="button" role="tab" aria-controls="pills-sem3"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - III</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - III</p>
-                                  </div>
                                 </button>
-                              </div>
+                            </div>
                             </ul>
                         </div>
                         <div class="item">
-                             <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box" id="pills-sem4-tab" data-bs-toggle="pill" data-bs-target="#pills-sem4" type="button"role="tab" aria-controls="pills-sem4" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/library.png" alt="">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem4-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem4" type="button" role="tab" aria-controls="pills-sem4"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - IV</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - IV</p>
-                                  </div>
                                 </button>
-                              </div>
+                            </div>
                         </div>
                         <div class="item">
-                              <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box" id="pills-sem5-tab" data-bs-toggle="pill" data-bs-target="#pills-sem5" type="button"role="tab" aria-controls="pills-sem5" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/teacher.png" alt="">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem5-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem5" type="button" role="tab" aria-controls="pills-sem5"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - V</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - V</p>
-                                  </div>
                                 </button>
-                              </div>
-
-                        </div>
-                        <div class="item">
-                              <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box" id="pills-sem6-tab" data-bs-toggle="pill" data-bs-target="#pills-sem6" type="button"role="tab" aria-controls="pills-sem6" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/scholarship.png" alt="">
-                                    </div>
-                                    <p class="box-number mb-0">Semester - VI</p>
-                                  </div>
-                                </button>
-                              </div>
+                            </div>
 
                         </div>
                         <div class="item">
-                             <div class="nav-item" role="presentation">
-                                <button class="nav-link semester-box" id="pills-sem7-tab" data-bs-toggle="pill" data-bs-target="#pills-sem7" type="button"role="tab" aria-controls="pills-sem7" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/scholarship.png" alt="">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem6-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem6" type="button" role="tab" aria-controls="pills-sem6"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - VI</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - IV</p>
-                                  </div>
                                 </button>
-                              </div>
+                            </div>
 
                         </div>
                         <div class="item">
-                              <div class="nav-item" role="presentation">
-                               <button class="nav-link semester-box" id="pills-sem8-tab" data-bs-toggle="pill" data-bs-target="#pills-sem8" type="button"role="tab" aria-controls="pills-sem8" aria-selected="true">
-                                  <div class="d-flex gap-3">
-                                    <div class="icon-circle">
-                                      <img src="assets/img/scholarship.png" alt="">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem7-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem7" type="button" role="tab" aria-controls="pills-sem7"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - VII</p>
                                     </div>
-                                    <p class="box-number mb-0">Semester - IV</p>
-                                  </div>
                                 </button>
-                              </div>
-                        </div>
-                  </div>
+                            </div>
 
-
-
-                  <button class="carousel-control-next" type="button"
-                      data-bs-target="#semesterCarousel"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon custom-arrow"></span>
-                  </button>
-
-                  <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="pills-sem1" role="tabpanel" aria-labelledby="pills-sem1-tab">
-                      <div class="row course-row">
-                        <div class="col-lg-4">
-                          <div class="course-card">
-                            <h4>Major Courses</h4>
-                            <ul>
-                              <li>Graphic Designing</li>
-                              <li>Graphics Lab</li>
-                              <li>Graphic Designing</li>
-                              <li>Graphics Lab</li>
-                              <li>Python Programming</li>
-                              <li>Python Lab</li>
-                              <li>AI Appetizer</li>
-                            </ul>
-                          </div>
                         </div>
-                        <div class="col-lg-4">
-                          <div class="course-card">
-                             <h4>Minor Courses</h4>
-                            <ul>
-                              <li>Introductin to AI </li>
-                              <li>Fundamental AI Lab.</li>
-                            </ul>
-                          </div>
+                        <div class="item">
+                            <div class="nav-item" role="presentation">
+                                <button class="nav-link semester-box" id="pills-sem8-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-sem8" type="button" role="tab" aria-controls="pills-sem8"
+                                    aria-selected="true">
+                                    <div class="d-flex gap-3">
+                                        <div class="icon-circle">
+                                            <img src="assets/img/library.png" alt="">
+                                        </div>
+                                        <p class="box-number mb-0">Semester - VIII</p>
+                                    </div>
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-                          <div class="course-card">
-                           <h4>Multidisciplinary Courses</h4>
-                            <ul>
-                              <li>Applied Mathematics</li>
-                              <li>Engineering Physics </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="course-card">
-                                <h4>Ability Enhancement course</h4>
-                            <ul>
-                               <li>Experimential soft competency - 1</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="course-card">
-                           <h4>Skill Enhancement course</h4>
-                            <ul>
-                              <li>UI/ UX Design</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="course-card">
-                          <h4>Value Added course</h4>
-                            <ul>
-                              <li>Happiness Connect program</li>
-                              <li>Sustainable Development Goal</li>
-                            </ul>
-                          </div>
-                        </div>
-                         <div class="col-lg-4 offset-lg-4">
-                          <div class="course-card">
-                           <h4>General Proficiency</h4>
-                            <ul>
-                               <li>General proficiency-I</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
                     </div>
 
-                    <div class="tab-pane fade" id="pills-sem2" role="tabpanel" aria-labelledby="pills-sem2-tab">
-                      <h4>Major Courses</h4>
-                      <p>Data structure using ‘C++’</p>
-                      <p>C++ Data Organization Lab.</p>
-                      <p>Basic Electrical and Electronics Engineering</p>
-                      <p>Motion Graphics </p>
-                      <p>Dynamic Graphics Lab</p>
 
-                      <h4>Minor Courses</h4>
-                      <p>Data Centric AI: Data collection and processing</p>
-                      <p>Data collection and processing Lab</p>
 
-                      <h4>Multidisciplinary Courses</h4>
-                      <p>Applied Statistics</p>
+                    <button class="carousel-control-next" type="button" data-bs-target="#semesterCarousel"
+                        data-bs-slide="next">
 
-                      <h4>Ability enhancement course</h4>
-                      <p>Experiential soft competency-II</p>
+                    </button>
 
-                      <h4>Skill enhancement course</h4>
-                      <p>Principles of Animation</p>
+                    <div class="tab-content" id="nav-tabContent" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tab-pane fade show active" id="pills-sem1" role="tabpanel"
+                            aria-labelledby="pills-sem1-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Graphic Designing</li>
+                                            <li>Graphics Lab</li>
+                                            <li>Graphic Designing</li>
+                                            <li>Graphics Lab</li>
+                                            <li>Python Programming</li>
+                                            <li>Python Lab</li>
+                                            <li>AI Appetizer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Introductin to AI </li>
+                                            <li>Fundamental AI Lab.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Multidisciplinary Courses</h5>
+                                        <ul>
+                                            <li>Applied Mathematics</li>
+                                            <li>Engineering Physics </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Ability Enhancement course</h5>
+                                        <ul>
+                                            <li>Experimential soft competency - 1</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Skill Enhancement course</h5>
+                                        <ul>
+                                            <li>UI/ UX Design</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Value Added course</h5>
+                                        <ul>
+                                            <li>Happiness Connect program</li>
+                                            <li>Sustainable Development Goal</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>General Proficiency</h5>
+                                        <ul>
+                                            <li>General proficiency-I</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                      <h4>Value added course</h4>
-                      <p>Environmental science</p>
+                        <div class="tab-pane fade" id="pills-sem2" role="tabpanel" aria-labelledby="pills-sem2-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Data structure using ‘C++’</li>
+                                            <li>C++ Data Organization Lab.</li>
+                                            <li>Basic Electrical and Electronics Engineering</li>
+                                            <li>Motion Graphics </li>
+                                            <li>Dynamic Graphics Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                      <h4>General Proficiency</h4>
-                      <p>General proficiency-II</p>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Data Centric AI: Data collection and processing</li>
+                                            <li>Data collection and processing Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Multidisciplinary Courses</h5>
+                                        <ul>
+                                            <li>Applied Statistics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Ability enhancement course</h5>
+                                        <ul>
+                                            <li>Experiential soft competency-II</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Skill enhancement course</h5>
+                                        <ul>
+                                            <li>Principles of Animation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Value added course</h5>
+                                        <ul>
+                                            <li>Environmental science</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>General Proficiency</h5>
+                                        <ul>
+                                            <li>General proficiency-II</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-sem3" role="tabpanel" aria-labelledby="pills-sem3-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Computer Organization and Architecture</li>
+                                            <li>Computer Systems Architecture Lab</li>
+                                            <li>Object oriented programming using java</li>
+                                            <li>Java Lab</li>
+                                            <li>Algorithm design and analysis</li>
+                                            <li>Algorithm Development and Evaluation Lab</li>
+                                            <li>Pre-Production & Storyboard for 2D Animation </li>
+                                            <li>2D Animation Pre-Production Lab</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Data Centric AI: Data Analysis</li>
+                                            <li>Data Analysis for AI Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Skill enhancement course</h5>
+                                        <ul>
+                                            <li>Assets for 2D Animation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Multidisciplinary Courses</h5>
+                                        <ul>
+                                            <li>Discrete Mathematics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Value added</h5>
+                                        <ul>
+                                            <li>Disaster management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>General Proficiency</h5>
+                                        <ul>
+                                            <li>General proficiency-III</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-sem4" role="tabpanel" aria-labelledby="pills-sem4-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Computer Networks</li>
+                                            <li>Computer Networking and Protocols Lab</li>
+                                            <li>Operating Systems</li>
+                                            <li>OS Programming Lab</li>
+                                            <li>Body Mechanism in 2D Animation</li>
+                                            <li>Acting for 2D Animation</li>
+                                            <li>Animation Acting Lab</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Machine Learning</li>
+                                            <li>ML Algorithms Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Skill Enhancement</h5>
+                                        <ul>
+                                            <li>Post-Production for 2D Animation(Project based)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>General Proficiency</h5>
+                                        <p>General proficiency-IV</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-sem5" role="tabpanel" aria-labelledby="pills-sem5-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Database Engineering </li>
+                                            <li>Database Engineering Lab</li>
+                                            <li>Introduction to 3D Animation using MAYA</li>
+                                            <li>3D Animation using MAYA Lab</li>
+                                            <li>3D Asset Creation</li>
+                                            <li>3D Asset Development Lab</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Rotography</li>
+                                            <li>Rotography using Nuke/Silhouette Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Summer Internship</h5>
+                                        <ul>
+                                            <li>
+                                                Internship
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Ability Enhancement course</h5>
+                                        <ul>
+                                            <li>
+                                                Employability planning and preparation – I
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>General proficiency</h5>
+                                        <ul>
+                                            <li>
+                                                General proficiency-V
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-sem6" role="tabpanel" aria-labelledby="pills-sem6-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Project management for professionals</li>
+                                            <li>Project management Lab</li>
+                                            <li>3D Animation</li>
+                                            <li>3D Motion Graphics Lab</li>
+                                            <li>3D Post-Production</li>
+                                            <li>3D Rendering and Compositing Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Paint (Software required Adobe Photoshop,Silhouette/Nuke)</li>
+                                            <li>Paint (Software required Adobe Photoshop,Silhouette/Nuke) Lab</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Ability Enhancement course</h5>
+                                        <ul>
+                                            <li>Employbility planning & preparation – II</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Skill enhancement</h5>
+                                        <ul>
+                                            <li>Major project (Implementation & presentation)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>General proficiency</h5>
+                                        <ul>
+                                            <li>General proficiency-VI </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-sem7" role="tabpanel" aria-labelledby="pills-sem7-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li><b>HONs Degree</b></li>
+                                            <li>Specialization in 2D Production</li>
+                                            <li>2D Production Lab</li>
+                                            <li>Use of AI in 2D Production</li>
+                                            <li>2D Production using AI Lab</li>
+                                            <li>Showreel for 2D Production</li>
+                                            <li>2D Production using showreel Lab</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Compositing</li>
+                                            <li>Compositing using Adobe After Effects, Nuke Lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Ability Enhancement Course</h5>
+                                        <ul>
+                                            <li>Research Methodology – I</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Skill enhancement</h5>
+                                        <ul>
+                                            <li>Showreel for 3D Production</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Summer Internship</h5>
+                                        <ul>
+                                            <li>Internship</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-sem8" role="tabpanel" aria-labelledby="pills-sem8-tab">
+                            <div class="row gy-4 course-row">
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Major Courses</h5>
+                                        <ul>
+                                            <li>Specialization 3D Production & Use of AI.(Project)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="course-card">
+                                        <h5>Minor Courses</h5>
+                                        <ul>
+                                            <li>Special Effects </li>
+                                            <li>Special Effects using Houdini Lab</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="tab-pane fade" id="pills-sem3" role="tabpanel" aria-labelledby="pills-sem3-tab">
-                      <h4>Major Courses</h4>
-                      <p>Computer Organization and Architecture</p>
-                      <p>Computer Systems Architecture Lab</p>
-                      <p>Object oriented programming using java</p>
-                      <p>Java Lab</p>
-                      <p>Algorithm design and analysis</p>
-                      <p>Algorithm Development and Evaluation Lab</p>
-                      <p>Pre-Production & Storyboard for 2D Animation </p>
-                      <p>2D Animation Pre-Production Lab</p>
-
-                      <h4>Minor Courses</h4>
-                      <p>Data Centric AI: Data Analysis</p>
-                      <p>Data Analysis for AI Lab</p>
-
-                      <h4>Skill enhancement course</h4>
-                      <p>Assets for 2D Animation</p>
-
-                      <h4>Multidisciplinary Courses</h4>
-                      <p>Discrete Mathematics</p>
-
-                      <h4>Value added</h4>
-                      <p>Disaster management </p>
-
-                      <h4>General Proficiency</h4>
-                      <p>General proficiency-III</p>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-sem4" role="tabpanel" aria-labelledby="pills-sem4-tab">
-                      <h4>Major Courses</h4>
-                      <p>Computer Networks</p>
-                      <p>Computer Networking and Protocols Lab</p>
-                      <p>Operating Systems</p>
-                      <p>OS Programming Lab</p>
-                      <p>Body Mechanism in 2D Animation</p>
-                      <p>Acting for 2D Animation</p>
-                      <p>Animation Acting Lab</p>
-
-                      <h4>Minor Courses</h4>
-                      <p>Machine Learning</p>
-                      <p>ML Algorithms Lab</p>
-
-                      <h4>Skill Enhancement</h4>
-                      <p>Post-Production for 2D Animation(Project based)</p>
-
-                      <h4>General Proficiency</h4>
-                      <p>General proficiency-IV</p>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-sem5" role="tabpanel" aria-labelledby="pills-sem5-tab">
-                      <h4>Major Courses</h4>
-                      <p>Database Engineering </p>
-                      <p>Database Engineering Lab</p>
-                      <p>Introduction to 3D Animation using MAYA</p>
-                      <p>3D Animation using MAYA Lab</p>
-                      <p>3D Asset Creation</p>
-                      <p>3D Asset Development Lab</p>
-
-                      <h4>Minor Courses</h4>
-                      <p>Rotography</p>
-                      <p>Rotography using Nuke/Silhouette Lab</p>
-
-                      <h4>Summer Internship</h4>
-                      <p>Internship</p>
-
-                      <h4>Ability Enhancement course</h4>
-                      <p>Employability planning and preparation – I</p>
-
-                      <h4>General proficiency</h4>
-                      <p>General proficiency-V</p>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-sem6" role="tabpanel" aria-labelledby="pills-sem6-tab">
-                      <h4>Major Courses</h4>
-                      <p>Project management for professionals</p>
-                      <p>Project management Lab</p>
-                      <p>3D Animation</p>
-                      <p>3D Motion Graphics Lab</p>
-                      <p>3D Post-Production</p>
-                      <p>3D Rendering and Compositing Lab</p>
-
-                      <h4>Minor Courses</h4>
-                      <p>Paint (Software required Adobe Photoshop,Silhouette/Nuke)</p>
-                      <p>Paint (Software required Adobe Photoshop,Silhouette/Nuke) Lab</p>
-
-                      <h4>Ability Enhancement course</h4>
-                      <p>Employbility planning & preparation – II</p>
-
-                      <h4>Skill enhancement</h4>
-                      <p>Major project (Implementation & presentation)</p>
-
-                      <h4>General proficiency</h4>
-                      <p>General proficiency-VI </p>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-sem7" role="tabpanel" aria-labelledby="pills-sem7-tab">
-                      <h4>Major Courses</h4>
-                      <p><b>HONs Degree</b></p>
-                      <p>Specialization in 2D Production</p>
-                      <p>2D Production Lab</p>
-                      <p>Use of AI in 2D Production</p>
-                      <p>2D Production using AI Lab</p>
-                      <p>Showreel for 2D Production</p>
-                      <p>2D Production using showreel Lab</p>
-
-                      <h4>Minor Courses</h4>
-                      <p>Compositing</p>
-                      <p>Compositing using Adobe After Effects, Nuke Lab</p>
-
-                      <h4>Ability Enhancement Course</h4>
-                      <p>Research Methodology – I</p>
-
-                      <h4>Skill enhancement</h4>
-                      <p>Showreel for 3D Production</p>
-
-                      <h4>Summer Internship</h4>
-                      <p>Internship </p>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-sem8" role="tabpanel" aria-labelledby="pills-sem8-tab">
-                      <h4>Major Courses</h4>
-                      <p>Specialization 3D Production & Use of AI.(Project)</p>
-
-                      <h4>Minor Courses</h4>
-                      <p>Special Effects </p>
-                      <p>Special Effects using Houdini Lab</p>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
         </div>
     </section>
 
     <section class="course mb">
         <div class="container">
-            <h2>Course Fees and Eligibility</h2>
-            <div class="course-box">
+            <h2 data-aos="fade-up">Course Fees and Eligibility</h2>
+            <div class="course-box" data-aos="fade-up" data-aos-delay="100">
                 <div class="c-bx">
                     <h6 style="color: #602118;">Eligibility</h6>
                     <p class="mb-2">
@@ -654,7 +960,7 @@
                     </p>
                 </div>
             </div>
-            <div class="d-t">
+            <div class="d-t" data-aos="fade-up" data-aos-delay="200">
                 <div class="d-flex flex-column flex-lg-row mb-3">
                     <button class="btn btn-duration">Duration <br>4 years full time</button>
                     <button class="btn btn-Tuition">Tuition Fees <br>Rs. 80000 /- Per Semester</button>
@@ -662,7 +968,7 @@
                 <p><b>*Fees such as Admission, Caution Money, Examination, Hostel, and Transport fees are extra EMI
                         Payment Option</b></p>
             </div>
-            <div class="cat">
+            <div class="cat" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/cartoon.png" alt="" class="img-fluid">
             </div>
         </div>
@@ -673,7 +979,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12"></div>
                 <div class="col-lg-6 col-md-12 col-12">
-                    <div class="bg-boxs" style="float: right;">
+                    <div class="bg-boxs" style="float: right;" data-aos="fade-left">
                         <img src="assets/img/comma.png" alt="" width="50px" height="50px" class="mb-4">
                         <h2 style="text-align:left;">Sri Sri University -
                             The Best of East and the Best of West</h2>
@@ -689,8 +995,8 @@
 
     <section class="parent mb">
         <div class="container">
-            <h2>What people Say Out us</h2>
-            <div class="owl-carousel owl-theme" data-owl-carousel='{
+            <h2 data-aos="fade-up">What people Say Out us</h2>
+            <div class="owl-carousel owl-theme" data-aos="fade-up" data-aos-delay="100" data-owl-carousel='{
                                             "margin": 10,
                                             "dots":true,
                                             "loop":true,
@@ -751,7 +1057,7 @@
 
     <section class="faq mb">
         <div class="container">
-            <h2 class="text-white">FAQ’s</h2>
+            <h2 class="text-white" data-aos="fade-down">FAQ’s</h2>
             <div class="fre-box">
                 <div data-aos="fade-up" data-aos-duration="1000">
                     <div class="faq-box">
@@ -855,17 +1161,104 @@
             </div>
         </section>
 
+        <section class="sticky-icon">
+            <div class="icon-box">
+                <a href="https://api.whatsapp.com/send?phone=918981119021" target="_blank"><img
+                        src="assets/img/whatsapp.png" alt="" width="25px"></a>
+            </div>
+            <div class="icon-box">
+                <a href="tel:+918981119021"><img src="assets/img/phone.png" alt="" width="28px"></a>
+            </div>
+        </section>
 
+        <div class="sticky-footer">
+            <a href="https://api.whatsapp.com/send?phone=918981119021" target="_blank" class="footer-btn whatsapp">
+                <img src="assets/img/whatsapp.png" alt="" width="25px">
+            </a>
+            <a href="#contact-us-form" class="footer-btn contact-us" style="color:#000;" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Contact Us
+            </a>
+            <a href="tel:+918981119021" class="footer-btn phone">
+                <img src="assets/img/phone.png" alt="" width="25px">
+            </a>
+        </div>
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content book-modal-content">
+                <button type="button" class="btn-close modal-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row g-0">
+                    
+                    <div class="col-lg-6 book-right" style="border-left: none; border-right: 1px solid #eaeaea;">
+                        <img src="assets/img/logo.png" alt="Sri Sri University" style="max-width: 180px;">
+                        
+                        <p class="motivational-line">
+                            "Empowering your creative journey into the future of technology. Start building your legacy with us today."
+                        </p>
 
+                        <div class="contact-details mt-4">
+                            <a href="tel:+918981119021" class="contact-item">
+                                <img src="assets/img/phone.png" alt="Phone" width="24px">
+                                +91 89811 19021
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=918981119021" target="_blank" class="contact-item">
+                                <img src="assets/img/whatsapp.png" alt="WhatsApp" width="24px">
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
 
+                    <div class="col-lg-6 book-left">
+                        <div class="form w-100">
+                            <form id="modal-form1">
+                                <h4 id="modal-enq" class="mb-4 text-center">Admission Enquiry Form!</h4>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control" name="modal_sname" id="modal_sname" placeholder="Name">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control" name="modal_sphone" id="modal_sphone" placeholder="Phone Number">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" name="modal_semail" id="modal_semail" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" id="modal_city" name="modal_city" class="form-control" placeholder="City">
+                                </div>
+                                <div class="mb-4">
+                                    <select class="form-select form-select-sm" aria-label="Small select example" id="modal_qualification" name="modal_qualification" required>
+                                        <option value="" selected disabled>Highest qualification</option>
+                                        <option value="12th Passout in 2025">12th Passout in 2025</option>
+                                        <option value="Pursuing Graduation">Pursuing Graduation</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="modal_exampleFormControlTextarea1" class="form-label" name="modal_message" id="modal_message" required>Message (if any)</label>
+                                    <textarea class="form-control" id="modal_exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-submit w-100">Submit</button>
+                            </form>
+                        </div>
+                    </div>
 
-
+                </div>
+            </div>
+        </div>
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true
+            });
+        </script>
 </body>
 
 </html>
