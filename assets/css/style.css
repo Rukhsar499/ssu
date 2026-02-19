@@ -580,6 +580,9 @@ h5 {
 .footer{
   margin: 20px 0px;
 }
+.fds{
+    color: #fff;
+   }
 @media (min-width: 1200px) and (max-width: 1400px) {}
 
 @media (min-width: 1400px) and (max-width: 1600px) {}
@@ -647,7 +650,20 @@ h5 {
     position: absolute;
     bottom: -3%;
   } */
-
+.university {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    padding: 0px 0 0px 0px;
+}
+.commas{
+  text-align: center;
+}
+.faq {
+    background-color: #FFF8ED;
+   
+}
   .how-img {
     position: relative;
     bottom: -8px;
@@ -741,5 +757,13 @@ h5 {
     }
    .text-container span{
     margin-top: 20px;
+   }
+   .footer{
+    background-color: #602118;
+    padding: 20px;
+    color: #fff;
+   }
+   .fds{
+    color: #252525;
    }
 }
