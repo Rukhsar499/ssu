@@ -577,7 +577,9 @@ h5 {
         padding: 20px 10px;
         font-weight: 400;
 }
-
+.footer{
+  margin: 20px 0px;
+}
 @media (min-width: 1200px) and (max-width: 1400px) {}
 
 @media (min-width: 1400px) and (max-width: 1600px) {}
@@ -605,7 +607,7 @@ h5 {
     /* adjust opacity here */
     z-index: 1;
   }
-.banner::before {
+/* .banner::before {
     content: "";
     position: absolute;
     top: 0;
@@ -618,10 +620,13 @@ h5 {
   .banner .container {
     position: relative;
     z-index: 2;
-  }
+  } */
   
 .banner {
-  padding: 100px 10px 0px 10px;
+    background-image: url(../img/hero-banner-mobile-size.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 200px 10px 0px 10px;
 }
   .adms .container {
     position: relative;
@@ -644,9 +649,18 @@ h5 {
   } */
 
   .how-img {
-    display: none;
-  }
-
+    position: relative;
+    bottom: -8px;
+}
+.art img{
+  width: 50%;
+}
+.art {
+    position: absolute;
+    top: 5px;
+    left: 35px;
+    width: 110px;
+}
   .tct {
     padding: 0px 0px 0px 0px;
   }
