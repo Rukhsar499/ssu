@@ -349,7 +349,7 @@ h5 {
   padding: 20px;
 
 }
-.owl-nav .owl-next span{
+.tab-slider .owl-nav .owl-next span{
   background: linear-gradient(90deg, #602118, #602118);
   display: block;
   width: 25px !important;
@@ -361,7 +361,7 @@ h5 {
   right: 0px;
   top: 10%;
 }
-.owl-nav .owl-prev span{
+.tab-slider .owl-nav .owl-prev span{
   background: linear-gradient(90deg, #602118, #602118);
   display: block;
   width: 25px !important;
@@ -711,7 +711,7 @@ h5 {
 
   .bg-box {
     padding: 20px;
-    height: 380px;
+    height: 400px;
   }
 .semester-box {
   padding: 0px 16px 0px 0px !important;
@@ -752,8 +752,8 @@ h5 {
         font-family: Arial, sans-serif;
     }
     .footer-btn.contact-us {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 245, 0.95) 100%);
-        color: #000;
+        background: linear-gradient(to bottom, #f5a520, #ffd18a);
+        color: #602118;
     }
    .text-container span{
     margin-top: 20px;
@@ -766,7 +766,7 @@ h5 {
    .fds{
     color: #252525;
    }
-   h1, h2, p{
+   h1, h2, p, #enq{
      font-family: "Poppins", sans-serif;
    }
    .enrol {
@@ -778,5 +778,21 @@ h5 {
 .bg-box {
     background: linear-gradient(90deg, #FFCF00 0%, #FDBB01 50%, #FCB501 100%);
   }
-  
+  .adms {
+    background-image: url(../img/mobile2.webp);
+  }
+   h2 {
+  font-size: 20px;
+}
+.form {
+  padding: 20px;
+  background: linear-gradient(to bottom, #f5a520, #ffd18a);
+
+}
+.btn-submit {
+    background-color: #F5821F;
+  }
+  .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+    display: block !important;
+}
 }
