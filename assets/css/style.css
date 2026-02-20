@@ -766,4 +766,17 @@ h5 {
    .fds{
     color: #252525;
    }
+   h1, h2, p{
+     font-family: "Poppins", sans-serif;
+   }
+   .enrol {
+    background: linear-gradient(90deg, #FEAC2C 0%, #FFED77 100%);
+  }
+  .footer {
+    margin: 0px 0px 20px 0px;
+}
+.bg-box {
+    background: linear-gradient(90deg, #FFCF00 0%, #FDBB01 50%, #FCB501 100%);
+  }
+  
 }
