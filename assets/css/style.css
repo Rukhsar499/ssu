@@ -792,7 +792,7 @@ h5 {
 .btn-submit {
     background-color: #F5821F;
   }
-  .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+  .owl-carousel .owl-dots.disabled {
     display: block !important;
 }
 }
