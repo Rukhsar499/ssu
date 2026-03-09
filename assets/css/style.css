@@ -11,15 +11,21 @@
 }
 
 body {
-  font-family: "Glitz", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #fff;
   /* background-image: linear-gradient(180deg, #FFF0E5 0%, #FFF0E5 40%);    */
 }
-a{
+
+a {
   text-decoration: none;
 }
-.sticky-footer{
+
+.sticky-footer {
   display: none;
+}
+small{
+  font-size: 13px;
+ 
 }
 .header {
   position: fixed;
@@ -61,9 +67,77 @@ a{
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
-.contact-item{
-   font-family: "Montserrat", sans-serif;
+.testimonial-card{
+    background: #fff;
+    border: 1px solid #7b3f36;
+    border-radius: 25px;
+    padding: 40px 25px;
+    position: relative;
+    margin-top: 30px;
+    box-shadow: 0 6px 10px rgb(131 131 131 / 19%);
+    /* height: 390px; */
 }
+.testimonial-card h6{
+  font-size: 15px;
+}
+.quote-icon {
+  position: absolute;
+  top: -37px;
+  left: 24px;
+  z-index: 10;
+}
+.quote-icon img{
+    width:60px !important;
+    display:block !important;
+}
+
+
+.testimonial-text{
+font-size:15px;
+line-height:1.8;
+color:#444;
+margin-top:20px;
+}
+
+.profile-img{
+width:50px !important;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.profile-placeholder{
+width:50px;
+height:50px;
+border-radius:50%;
+background:#eee;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+}
+
+.stars{
+color:#f4b400;
+font-size:18px;
+}
+
+@media(max-width:768px){
+
+.testimonial-card{
+padding:35px 20px;
+}
+
+.stars{
+margin-top:10px;
+}
+
+}
+
+.contact-item {
+  font-family: "Montserrat", sans-serif;
+}
+
 p,
 ul li {
   font-family: "Montserrat", sans-serif;
@@ -81,6 +155,20 @@ h1 {
   padding: 200px 0 0px 0px;
 }
 
+.banner-animation {
+  background-image: url('../img/vfx-banner.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0 0px 0px;
+}
+
+.banner-bca {
+  background-image: url('../img/comuter-application-banner.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0 0px 0px;
+}
+
 .form {
   background-color: #FEE771;
   padding: 40px;
@@ -91,20 +179,27 @@ h1 {
   color: #fff;
   width: 100%;
   padding: 10px;
-  border: none;
+  border: #602118 solid 2px;
   border-radius: 5px;
   font-family: "Montserrat", sans-serif;
 }
 
-.form-control, .form-select {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #000;
-    color: #000;
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif;
-    padding: 0px 0px 5px 0px;
-    border-radius: 0px;
+.btn-submit:hover {
+  border: #602118 solid 2px;
+  font-weight: 500;
+}
+
+
+.form-control,
+.form-select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  color: #000;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  padding: 0px 0px 5px 0px;
+  border-radius: 0px;
 }
 
 ::placeholder {
@@ -121,15 +216,22 @@ h1 {
 
 }
 
+.semester-box {
+  background: #fff !important;
+  color: #602118 !important;
+}
+
 .col-texts li {
   padding-top: 10px;
   color: #fff;
 }
-#enq{
+
+#enq {
   margin-bottom: 20px;
- border-bottom: 2px solid #000;
- width: fit-content;
+  border-bottom: 2px solid #000;
+  width: fit-content;
 }
+
 .mb {
   margin-bottom: 50px;
 }
@@ -144,6 +246,7 @@ h2 {
   text-align: center;
   color: #252525;
   margin-bottom: 20px;
+  font-family: "Glitz", sans-serif;
 }
 
 .faq {
@@ -173,12 +276,14 @@ h6 {
   width: 60%;
   margin-top: 30px;
 }
+
 .how-bx2 {
-    background: linear-gradient(to bottom, #ffffff 0%, #e9e9e96e 100%);
-    backdrop-filter: blur(6px);
-    border-radius: 0px 0px 12px 12px;
-    padding: 20px;
+  background: linear-gradient(to bottom, #ffffff 0%, #e9e9e96e 100%);
+  backdrop-filter: blur(6px);
+  border-radius: 0px 0px 12px 12px;
+  padding: 20px;
 }
+
 .bg-box {
   background: #e6e6e686;
   border-radius: 12px;
@@ -248,10 +353,12 @@ h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
+
 .btn-Tuition:hover {
   background-color: #602118;
   color: #fff;
 }
+
 .cat {
   position: absolute;
   bottom: -9%;
@@ -259,6 +366,7 @@ h5 {
   width: 350px;
 
 }
+
 .icon-box {
   background-color: #602118;
   box-shadow: rgba(0, 0, 0, 0.176) 0px 0px 12px;
@@ -274,6 +382,7 @@ h5 {
   right: 1%;
   z-index: 999;
 }
+
 .course {
   position: relative;
 }
@@ -289,10 +398,12 @@ h5 {
   font-weight: 600;
   margin-right: 20px;
 }
+
 .btn-duration:hover {
   background-color: #602118;
   color: #fff;
 }
+
 .owl-theme .owl-dots .owl-dot span {
   width: 10px;
   height: 2px;
@@ -317,6 +428,28 @@ h5 {
   background-size: cover;
   background-position: left;
   padding: 200px 0 0px 0px;
+}
+
+.adms-animation {
+  background-image: url(../img/vfx-admission-banner-flip.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0px;
+  height: 500px;
+  background-position-y: top;
+  position: relative;
+}
+
+.adms-bca {
+  background-image: url(../img/bananer-computer.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0px;
+  height: 500px;
+  background-position-y: top;
+  position: relative;
 }
 
 .adms {
@@ -349,7 +482,8 @@ h5 {
   padding: 20px;
 
 }
-.tab-slider .owl-nav .owl-next span{
+
+.tab-slider .owl-nav .owl-next span {
   background: linear-gradient(90deg, #602118, #602118);
   display: block;
   width: 25px !important;
@@ -357,11 +491,12 @@ h5 {
   color: #fff;
   font-size: 17px;
   border-radius: 50px;
-  position:absolute;
+  position: absolute;
   right: 0px;
   top: 10%;
 }
-.tab-slider .owl-nav .owl-prev span{
+
+.tab-slider .owl-nav .owl-prev span {
   background: linear-gradient(90deg, #602118, #602118);
   display: block;
   width: 25px !important;
@@ -369,10 +504,11 @@ h5 {
   color: #fff;
   font-size: 17px;
   border-radius: 50px;
-  position:absolute;
+  position: absolute;
   left: -4%;
   top: 10%;
 }
+
 /* semester-tab section */
 
 .semester-box {
@@ -413,20 +549,18 @@ h5 {
   font-weight: 600;
 }
 
-.box-number:hover {
-  color: #602118;
-}
-
-
-
+/*.box-number:hover {*/
+/*  color: #602118;*/
+/*}*/
 /* .course-card{
     padding: 30px 20px;
     border: 1px solid #d1cfcfdb;
     border-radius: 10px;
     height: 100%;
     background-color: #f8f0ee;
-    
+
 } */
+
 .course-card {
   position: relative;
   padding: 30px 25px;
@@ -549,6 +683,17 @@ h5 {
   bottom: -59px;
 }
 
+.how-img-animation {
+  position: relative;
+  bottom: -46px;
+  ;
+}
+
+.how-img-vfx {
+  position: relative;
+  bottom: -46px;
+}
+
 .art {
   position: absolute;
   top: -20px;
@@ -561,28 +706,33 @@ h5 {
 }
 
 .rec .owl-dots {
-  
+
   bottom: -50%;
 }
+
 .apply {
-    position: fixed;
-    bottom: 45%;
-    left: -3%;
-    transform: rotate(270deg);
+  position: fixed;
+  bottom: 45%;
+  left: -3%;
+  transform: rotate(270deg);
 }
-.shine-button{
+
+.shine-button {
   background-color: #602118;
-    box-shadow: rgba(0, 0, 0, 0.176) 0px 0px 12px;
-        color: #fff;
-        padding: 20px 10px;
-        font-weight: 400;
+  box-shadow: rgba(0, 0, 0, 0.176) 0px 0px 12px;
+  color: #fff;
+  padding: 20px 10px;
+  font-weight: 400;
 }
-.footer{
+
+.footer {
   margin: 20px 0px;
 }
-.fds{
-    color: #fff;
-   }
+
+.fds {
+  color: #fff;
+}
+
 @media (min-width: 1200px) and (max-width: 1400px) {}
 
 @media (min-width: 1400px) and (max-width: 1600px) {}
@@ -610,7 +760,8 @@ h5 {
     /* adjust opacity here */
     z-index: 1;
   }
-/* .banner::before {
+
+  /* .banner::before {
     content: "";
     position: absolute;
     top: 0;
@@ -624,13 +775,14 @@ h5 {
     position: relative;
     z-index: 2;
   } */
-  
-.banner {
+
+  .banner {
     background-image: url(../img/hero-banner-mobile-size.webp);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    padding: 200px 10px 0px 10px;
-}
+    padding: 180px 10px 0px 10px;
+  }
+
   .adms .container {
     position: relative;
     z-index: 2;
@@ -650,33 +802,39 @@ h5 {
     position: absolute;
     bottom: -3%;
   } */
-.university {
+  .university {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
     padding: 0px 0 0px 0px;
-}
-.commas{
-  text-align: center;
-}
-.faq {
+  }
+
+  .commas {
+    text-align: center;
+  }
+
+  .faq {
     background-color: #FFF8ED;
-   
-}
+
+  }
+
   .how-img {
     position: relative;
     bottom: -8px;
-}
-.art img{
-  width: 50%;
-}
-.art {
+  }
+
+  .art img {
+    width: 50%;
+  }
+
+  .art {
     position: absolute;
     top: 5px;
     left: 35px;
     width: 110px;
-}
+  }
+
   .tct {
     padding: 0px 0px 0px 0px;
   }
@@ -713,86 +871,164 @@ h5 {
     padding: 20px;
     height: 400px;
   }
-.semester-box {
-  padding: 0px 16px 0px 0px !important;
-    
-}
+
+  .semester-box {
+    padding: 0px 16px 0px 0px !important;
+
+  }
+
   .bg-boxs {
-        padding: 18px 17px;
-        width: 338px;
-    }
+    padding: 18px 17px;
+    width: 338px;
+  }
+
   .sticky-icon {
-        display: none;
-    }
-    .sticky-footer {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f8f9fa;
-        box-shadow: 0 -2px 6px rgb(0 0 0 / .2);
-        z-index: 1000;
-        justify-content: space-around;
-        padding: 0;
-    }
-    .footer-btn.whatsapp, .sticky-contact:hover, .whatsapp, .footer-btn.phone
-       {
-        background-color: #602118;
-    }
-    .footer-btn {
-        flex: 1;
-        font-size: 14px;
-        padding: 10px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        transition: background-color .3s, transform .2s;
-        font-family: Arial, sans-serif;
-    }
-    .footer-btn.contact-us {
-        background: linear-gradient(to bottom, #f5a520, #ffd18a);
-        color: #602118;
-    }
-   .text-container span{
+    display: none;
+  }
+
+  .sticky-footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 0 -2px 6px rgb(0 0 0 / .2);
+    z-index: 1000;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .footer-btn.whatsapp,
+  .sticky-contact:hover,
+  .whatsapp,
+  .footer-btn.phone {
+    background-color: #602118;
+  }
+
+  .footer-btn {
+    flex: 1;
+    font-size: 14px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background-color .3s, transform .2s;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-btn.contact-us {
+    background: linear-gradient(to bottom, #f5a520, #ffd18a);
+    color: #602118;
+  }
+
+  .text-container span {
     margin-top: 20px;
-   }
-   .footer{
+  }
+
+  .footer {
     background-color: #602118;
     padding: 20px;
     color: #fff;
-   }
-   .fds{
-    color: #252525;
-   }
-   h1, h2, p, #enq{
-     font-family: "Poppins", sans-serif;
-   }
-   .enrol {
-    background: linear-gradient(90deg, #FEAC2C 0%, #FFED77 100%);
   }
+
+  .fds {
+    color: #252525;
+  }
+
+  h1,
+  h2,
+  p,
+  #enq {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .enrol {
+    background: linear-gradient(90deg, #FEAC2C 0%, #FFED77 100%);
+    margin-bottom: 10px;
+  }
+
   .footer {
     margin: 0px 0px 20px 0px;
-}
-.bg-box {
+  }
+
+  .bg-box {
     background: linear-gradient(90deg, #FFCF00 0%, #FDBB01 50%, #FCB501 100%);
   }
+
   .adms {
     background-image: url(../img/mobile2.webp);
   }
-   h2 {
-  font-size: 20px;
-}
-.form {
-  padding: 20px;
-  background: linear-gradient(to bottom, #f5a520, #ffd18a);
 
-}
-.btn-submit {
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .form {
+    padding: 20px;
+    background: linear-gradient(to bottom, #f5a520, #ffd18a);
+
+  }
+
+  .btn-submit {
     background-color: #F5821F;
   }
+
   .owl-carousel .owl-dots.disabled {
     display: block !important;
+  }
+
+  h1 {
+    margin-top: 250px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  .mob-phn {
+    padding: 20px;
+    background: linear-gradient(to bottom, #f5a520, #ffd18a);
+    position: relative;
+    margin-bottom: -344px;
+  }
+
+  .rec {
+    margin-top: 360px;
+  }
+
+  .how-img-vfx {
+    position: relative;
+    bottom: 0px;
+  }
+
+  .how-img-animation {
+    position: relative;
+    bottom: 0px;
+  }
+
+  .bg-boxs {
+    padding: 18px 17px;
+    width: 100%;
+  }
+  .adms-animation {
+    background-image: url(../img/vfx-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0px;
+    height: 500px;
+    background-position-y: top;
+    position: relative;
+}
+.adms-bca {
+  background-image: url(../img/bca-mobile.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0px;
+  height: 500px;
+  background-position-y: top;
+  position: relative;
 }
 }
